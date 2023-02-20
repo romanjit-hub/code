@@ -77,6 +77,12 @@ export function NavItems() {
       <NavItem>
         <a href="#">Contact Us</a>
       </NavItem>
+      <NavItem>
+        <a href="#">Login</a>
+      </NavItem>
+      <NavItem>
+        <a href="#">Register</a>
+      </NavItem>
     </ListContainer>
   );
 }
