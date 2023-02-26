@@ -14,7 +14,7 @@ import { setTopCars } from "./slice";
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
 import { makeSelectTopCars } from "./selectors";
-import MoonLoader from "react-spinners/MoonLoader";
+//import MoonLoader from "react-spinners/MoonLoader";
 
 const TopCarsContainer = styled.div`
   ${tw`
@@ -145,11 +145,10 @@ export function TopCars() {
   return (
     <TopCarsContainer>
       <Title>Explore Our Top Deals</Title>
-      {isLoading && (
-        <LoadingContainer>
-          <MoonLoader loading size={20} />
-        </LoadingContainer>
-      )}
+      
+
+      
+    
       {isEmptyTopCars && !isLoading && <EmptyCars>No Cars To Show!</EmptyCars>}
       {!isEmptyTopCars && !isLoading && (
         <CarsContainer>
