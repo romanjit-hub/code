@@ -16,7 +16,7 @@ const AppContainer = styled.div`
 function App() {
   return (
     <AppContainer>
-    <HomePage />
+      <HomePage /> 
   </AppContainer>
   );
 }
