@@ -33,7 +33,7 @@ export function HomePage() {
       <BookingSteps />
       <Marginer direction="vertical" margin="5 em" />
       <AboutUs />
-      <TopCars />
+    
       <Footer/>
     </PageContainer>
   );
