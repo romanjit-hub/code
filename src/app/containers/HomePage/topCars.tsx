@@ -81,35 +81,38 @@ const wait = (timeout: number) => new Promise((rs) => setTimeout(rs, timeout));
 export function TopCars() {
       const [current,setCurrent] = useState(0);
       const [isLoading, setLoading] = useState(false);
-       const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
+  const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
+  const testCar: ICar = {
+    name: "Audi S3 Car",
+    mileage: "10k",
+    thumbnailSrc:
+      "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
+    dailyPrice: 70,
+    monthlyPrice: 1600,
+    gearType: "Auto",
+    gas: "Petrol",
+  };
+
+  const testCar2: ICar = {
+    name: "HONDA cITY 5 Seater Car",
+    mileage: "20k",
+    thumbnailSrc:
+      "https://shinewiki.com/wp-content/uploads/2019/11/honda-city.jpg",
+    dailyPrice: 50,
+    monthlyPrice: 1500,
+    gearType: "Auto",
+    gas: "Petrol",
+  };
   
-        console.log("Cars: ", cars);
-        if (cars) setTopCars(cars);
-        setLoading(false);
-
-      const testCar: ICar = {
-        name: "Audi S3 Car",
-        mileage: "10k",
-        thumbnailSrc:
-          "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
-        dailyPrice: 70,
-        monthlyPrice: 1600,
-        gearType: "Auto",
-        gas: "Petrol",
-      };
-
-      const testCar2: ICar = {
-        name: "HONDA cITY 5 Seater Car",
-        mileage: "20k",
-        thumbnailSrc:
-          "https://shinewiki.com/wp-content/uploads/2019/11/honda-city.jpg",
-        dailyPrice: 50,
-        monthlyPrice: 1500,
-        gearType: "Auto",
-        gas: "Petrol",
-      };
-
-
+  const cars = [<Car{...testCar} />,
+    <Car{...testCar2} />,
+    <Car{...testCar} />,
+    <Car{...testCar2} />,
+    <Car{...testCar2} />,
+    <Car{...testCar} />,
+    
+  ]
+          
       const numberOfDots = isMobile ? cars.length : Math.ceil(cars.length / 3);
 
       return (
@@ -120,7 +123,7 @@ export function TopCars() {
               value={current}
               onChange={setCurrent}
               slides={[(<Car {...testCar2} />),
-                (<Car {...testCar} />), (<Car {...testCar} />),
+                (<Car {...testCar} />), (<Car {...testCar2} />),
                 (<Car {...testCar} />), (<Car {...testCar} />),
                 (<Car {...testCar} />), (<Car {...testCar2} />), (<Car {...testCar} />),
                 (<Car {...testCar2} />)]}
@@ -154,9 +157,10 @@ export function TopCars() {
                       },
                     ],
                   },
-                }}
-              />
-              <Dots value={current} onChange={setCurrent} number={numberOfDots} />
+                }}>
+
+            </Carousel>
+            <Dots value={current} onChange={setCurrent} number={numberOfDots} />
             </CarsContainer>
         
         </TopCarsContainer>
