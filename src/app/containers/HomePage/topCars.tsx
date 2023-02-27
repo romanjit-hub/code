@@ -3,13 +3,11 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { ICar } from "../../../typings/car";
 import { Car } from "../../components/car";
-import Carousel, { Dots, slidesToShowPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
+import Carousel, { Dots, slidesToShowPlugin } from "@brainhubeu/react-carousel";
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../components/responsive";
-import { current } from "@reduxjs/toolkit";
-import { Dispatch } from "redux";
-import { useDispatch, useSelector } from "react-redux";
+
 
 
 
@@ -76,11 +74,11 @@ const LoadingContainer = styled.div`
 
 
 
-const wait = (timeout: number) => new Promise((rs) => setTimeout(rs, timeout));
+
 
 export function TopCars() {
       const [current,setCurrent] = useState(0);
-      const [isLoading, setLoading] = useState(false);
+     
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
   const testCar: ICar = {
     name: "Audi S3 Car",
